@@ -44,7 +44,4 @@ class OrbitSlice3D:
 
 def construct_slice_set(vector_set: List[Vector3D]) -> List[OrbitSlice3D]:
     vector_pairs = util.pair_vectors(vector_set)
-    orbit_slices = []
-    for vector_pair in vector_pairs:
-        orbit_slices.append(OrbitSlice3D(*vector_pair))
-    return orbit_slices
+    return [OrbitSlice3D(*pair) for pair in vector_pairs]
